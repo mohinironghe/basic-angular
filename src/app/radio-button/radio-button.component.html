@@ -1,0 +1,15 @@
+<p>radio-button works!</p>
+<form [formGroup]="form" (ngSubmit)="submit()">
+<div *ngFor="let order of orders;">
+<input formControlName="orders" type="radio" name="orders" [value]="order.id" />
+{{order.name}}
+</div>
+<input formControlName="name" type="text" name="name" />
+<select formControlName="dropdown">
+
+    <option *ngFor="let item of orders;" [value]="item.id">{{item.name}}</option>
+</select>
+<button>submit</button>
+
+
+</form>
